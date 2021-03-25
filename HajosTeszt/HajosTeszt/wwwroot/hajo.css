@@ -55,8 +55,18 @@
 }
 
 .clickable:hover {
-    background-color: lightgreen;
+    background-color: lightblue;
     color: black;
+}
+
+.jo:hover {
+    color: white;
+    background-color: green;
+}
+
+.rossz:hover {
+    color: white;
+    background-color: red;
 }
 
 .clickable {
