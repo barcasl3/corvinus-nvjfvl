@@ -36,5 +36,15 @@ namespace HajosTeszt.Controllers
 
             return new JsonResult(kerdes);
         }
+
+        [HttpGet]
+        [Route("questions/count")]
+        public int M3()
+        {
+            hajostesztContext context = new hajostesztContext();
+            int kerdesekSzama = context.Questions.Count();
+
+            return kerdesekSzama;
+        }
     }
 }
