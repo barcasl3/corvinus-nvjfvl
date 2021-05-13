@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        <div id="jokeList"></div>
+        <div>
+            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
+        </div>
+        <button id="addButton">Új vicc felvétele</button>
+    </form>
+    <script>
+        let allJokes;
+
+        document.getElementById('addButton').addEventListener('click', () => {
+            let data = {
+                text: document.getElementById('jokeText').value
+            }
+
+            fetch('api/jokes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(data => {
+                    if (data.ok) {
+                        console.log('Siker');
+                    }
+                    else {
+                        console.log('Hiba');
+                    }
+                })
+        });
+
+        document.onload = loadJokes();
+
+        function loadJokes() {
+            fetch('api/jokes')
+                .then(response => response.json())
+                .then(jokes => {
+                    allJokes = jokes;
+                    let jokeListEl = document.getElementById('jokeList');
+                    for (let i = 0; i < allJokes.length; i++) {
+                        var jokeDiv = document.createElement('div');
+                        jokeDiv.innerHTML = allJokes[i].jokeText;
+                        jokeListEl.appendChild(jokeDiv);
+                    }
+                })
+        }
+    </script>
+</body>
+</html>
