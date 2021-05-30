@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>Vonatok listája</h2>
+        <table class="table responsive">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Vonatszám</td>
+                    <td>Vonatnem</td>
+                    <td>Induló állomás</td>
+                    <td>Indulási idő</td>
+                    <td>Célállomás</td>
+                    <td>Érkezési idő</td>
+                    <td>Művelet</td>
+                </tr>
+            </thead>
+            <tbody id="vonatok">
+            </tbody>
+        </table>
+        <hr />
+        <h2>Új vonat felvétele</h2>
+        <form>
+            <label for="trainnumber" class="form-label">Vonatszám</label>
+            <input class="form-control" type="number" id="trainnumber" />
+            <label for="type" class="form-label">Vonatnem</label>
+            <input class="form-control" type="text" id="type" />
+            <label for="startstation" class="form-label">Induló állomás</label>
+            <input class="form-control" type="text" id="startstation" />
+            <label for="deptime" class="form-label">Indulási idő</label>
+            <input class="form-control" type="text" id="deptime" />
+            <label for="endstation" class="form-label">Célállomás</label>
+            <input class="form-control" type="text" id="endstation" />
+            <label for="arrtime" class="form-label">Érkezési idő</label>
+            <input class="form-control" type="text" id="arrtime" />
+            <hr />
+            <button type="button" class="btn btn-primary" id="addtrain">Vonat felvétele</button>
+        </form>
+    </div>
+    <script src="trains.js"></script>
+</body>
+</html>

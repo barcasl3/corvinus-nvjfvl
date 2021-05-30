@@ -5,6 +5,7 @@
 
 HajostesztContext.cs
 FunnyDatabaseContext.cs
+bestdbContext.cs
 
 # User-specific files
 *.rsuser
